@@ -1,0 +1,11 @@
+def num():
+    number=int(input("please enter your number "))
+    if (number%4)==0:
+        print("The number "+ str(number)+ " is a number multiple of 4" )
+    elif (number%2)==0:
+        print("The number "+ str(number)+ " is even number" )
+    else:
+        print("The number "+ str(number)+ " is odd number" )
+    return()
+num()
+num()
