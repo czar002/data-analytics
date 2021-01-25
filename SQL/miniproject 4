@@ -1,0 +1,25 @@
+CREATE TABLE Video 
+(
+    Video_ID int Primary key,
+    Video_title varchar(255),
+	Video_length TIME(3),
+	URL varchar(255)
+);
+INSERT INTO Video (video_id,video_title, video_length, URL)
+VALUES
+(1,'Promising Young Woman','1:53:53','https://www.youtube.com/watch?v=ZCpTaCE4hMM'), (2,'American Skin','1:29:57','https://www.youtube.com/watch?v=95zGrgRYzb4'),
+(3,'Beyond the Lights','1:56:28','https://www.youtube.com/watch?v=3c5lAcxRnH0');
+
+CREATE TABLE Reviewers 
+(
+    Video_ID int,
+	Name varchar(255),
+    Rate smallint
+);
+INSERT INTO Reviewers (Video_ID,Name, Rate)
+VALUES
+(1,'Alex',5),(1,'John',3), (2,'Alex',4),(2,'John',4) (3,'Alex',3),(3,'John',5);
+select * from Reviewers;
+SELECT Video.video_id,video.video_title, video.video_length, video.URL, Reviewers.Name, reviewers.rate
+FROM Video
+INNER JOIN Reviewers ON Video.video_id=reviewers.video_id;
